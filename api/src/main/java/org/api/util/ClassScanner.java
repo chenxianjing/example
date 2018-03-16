@@ -14,6 +14,12 @@ import java.util.jar.JarFile;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 类扫描
+ * 
+ * @author chenxianjing
+ *
+ */
 @Slf4j
 public class ClassScanner {
 
