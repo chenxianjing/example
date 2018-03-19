@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ImportResource;
 import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages= {"org.cc.controller"})
-@DubboComponentScan(basePackages= {"org.cc.controller"})
+@ComponentScan(basePackages= {"org.cc"})
+@DubboComponentScan(basePackages= {"org.cc"})
 @ImportResource("classpath:dubbo/dubbo.xml")
 public class Application {
 	
