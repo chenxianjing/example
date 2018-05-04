@@ -12,7 +12,8 @@
     <module>api</module>
     <module>provider</module>
     <module>consumer</module>
-  </modules>
+    <module>MyGenerator</module>
+   </modules>
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -27,7 +28,9 @@
 		<zookeeper.version>3.5.2-alpha</zookeeper.version>
 		<statemachine.version>1.2.8.RELEASE</statemachine.version>
 		<redis.version>1.5.10.RELEASE</redis.version>
-		<slf4j.version>1.8.0-alpha2</slf4j.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<javapoet.version>1.10.0</javapoet.version>
+		<mysql.version>6.0.6</mysql.version>
 	</properties>
    <dependencyManagement>
 	<dependencies>
@@ -52,17 +55,21 @@
 	     <dependency>  
 	         <groupId>com.101tec</groupId>  
 	         <artifactId>zkclient</artifactId>  
-	         <version>${zkclient.version}</version>  
+	         <version>${zkclient.version}</version>
 	         <exclusions>
-	         	<exclusion>
-	         		<groupId>org.slf4j</groupId>
-	    			<artifactId>slf4j-api</artifactId>
-	         	</exclusion>
-	         	<exclusion>
-	         		<groupId>org.slf4j</groupId>
-	    			<artifactId>slf4j-log4j12</artifactId>
-	         	</exclusion>
-	         </exclusions>
+                    <exclusion>
+                        <artifactId>slf4j-api</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>log4j</artifactId>
+                        <groupId>log4j</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>slf4j-log4j12</artifactId>
+                        <groupId>org.slf4j</groupId>
+                    </exclusion>
+                </exclusions>  
 	     </dependency>
 	     <dependency>
 		    <groupId>org.projectlombok</groupId>
@@ -90,6 +97,16 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+        <dependency>
+		    <groupId>com.squareup</groupId>
+		    <artifactId>javapoet</artifactId>
+		    <version>${javapoet.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql.version}</version>
+		</dependency>
 	</dependencies>
     </dependencyManagement>
     <build>
